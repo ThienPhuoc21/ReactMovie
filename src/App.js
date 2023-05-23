@@ -22,9 +22,9 @@ function App() {
 
           </Route>
           <Route path="ReactMovie/tv" element={<TV />}>
-
           </Route>
-          <Route path="/film/:movieortv/:id" element={<Film />} >
+
+          <Route path="ReactMovie/film/:movieortv/:id" element={<Film />} >
           </Route>
         </Routes>
       </div>

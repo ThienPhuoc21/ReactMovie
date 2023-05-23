@@ -80,7 +80,7 @@ export default class Toprated extends Component {
                                 list.map((item, index) => {
                                     return (
                                         <div className="col l-12" key={index}>
-                                            <Link to={`/film/${this.state.Movie_TV ? "movie" : "tv"}/${item.id}`} className="link" >                                            <div className="item">
+                                            <Link to={`/ReactMovie/film/${this.state.Movie_TV ? "movie" : "tv"}/${item.id}`} className="link" >                                            <div className="item">
                                                 <div className="poster">
                                                     {item.poster_path ? <><img src={'https://image.tmdb.org/t/p/w200' + item.poster_path} alt="poster"></img></> : <><div>No poster</div></>}
                                                 </div>

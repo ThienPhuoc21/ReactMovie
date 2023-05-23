@@ -140,7 +140,7 @@ class Film extends React.Component {
                                 listRec.map((item, index) => {
                                     return (
                                         <div className="wrap-item" key={index}>
-                                            <Link to={`/film/${this.state.mode}/${item.id}`} className="link" refresh="true" onClick={() => {
+                                            <Link to={`/ReactMovie/film/${this.state.mode}/${item.id}`} className="link" refresh="true" onClick={() => {
                                                 setTimeout(() => {
                                                     window.location.reload(false);
                                                     window.scrollTo(0, 0);
@@ -171,7 +171,7 @@ class Film extends React.Component {
                                     listSim.map((item, index) => {
                                         return (
                                             <div className="wrap-item" key={index}>
-                                                <Link to={`/film/${this.state.mode}/${item.id}`} className="link" refresh="true" onClick={() => {
+                                                <Link to={`/ReactMovie/film/${this.state.mode}/${item.id}`} className="link" refresh="true" onClick={() => {
                                                     setTimeout(() => {
                                                         window.location.reload(false);
                                                         window.scrollTo(0, 0);
