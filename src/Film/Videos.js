@@ -58,7 +58,7 @@ export default class Videos extends React.Component {
                         <div className="videos-mode">{this.state.clip_trailer === 1 ? "(Trailers)" : "(Clips)"}</div>
                         <div className='film-videos-wrap'>
                             {this.state.video && this.state.video.clip ?
-                                <iframe width="100vw" height="auto" src={"https://www.youtube.com/embed/" + (this.state.clip_trailer === 1 ? this.state.video.trailer[this.state.current_video_index] : this.state.video.clip[this.state.current_video_index])} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> : <></>}
+                                <iframe src={"https://www.youtube.com/embed/" + (this.state.clip_trailer === 1 ? this.state.video.trailer[this.state.current_video_index] : this.state.video.clip[this.state.current_video_index])} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> : <></>}
                             <div className="film-videos-button">
                                 {this.state.clip_trailer === 1 ? <button className='switch' onClick={() => this.handleSwicth()}>Clip</button> : <button className='switch' onClick={() => this.handleSwicth()}>Trailer</button>}
                                 <div className='page-wrap'>
