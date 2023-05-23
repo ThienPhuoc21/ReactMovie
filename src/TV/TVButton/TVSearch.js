@@ -23,7 +23,7 @@ class TVSearch extends React.Component {
             <h3 className='search-title'>Search</h3>
             <div className="search-wrap">
                 <input type="text" placeholder="Tv show name" onChange={(event) => this.handleType(event)}></input>
-                <button className="search-button" onClick={(event) => this.handleSearch()}><i className="fas fa-search"></i></button>
+                <button className="search-button" onClick={(event) => this.handleSearch()}><i className="fa fa-search"></i></button>
             </div>
         </div>)
     }

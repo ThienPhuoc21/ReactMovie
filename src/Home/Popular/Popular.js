@@ -94,7 +94,7 @@ export default class Popular extends Component {
                                                             {this.show_genres(item.genre_ids)}
                                                         </div >
                                                         <div className="score">
-                                                            <div><span className='pop'>{Math.round(item.popularity * 10) / 10} <i className="fas fa-users" ></i></span></div>
+                                                            <div><span className='pop'>{Math.round(item.popularity * 10) / 10} <i className="fa fa-users" ></i></span></div>
                                                             <br></br>
                                                             <div><span className='vote'>{Math.round(item.vote_average * 10) / 10} <i className="fa fa-star" ></i></span></div>
                                                         </div >

@@ -100,7 +100,7 @@ class Film extends React.Component {
                                     <div><span className='vote'>{Math.round(this.state.film.vote_average * 10) / 10} <i className="fa fa-star" ></i></span></div></div>
                                 <div>
                                     <h4>Popularity</h4>
-                                    <div><span className='pop'>{Math.round(this.state.film.popularity * 10) / 10} <i className="fas fa-users" ></i></span></div>
+                                    <div><span className='pop'>{Math.round(this.state.film.popularity * 10) / 10} <i className="fa fa-users" ></i></span></div>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +149,7 @@ class Film extends React.Component {
                                                 <img className="profile-image" src={"https://image.tmdb.org/t/p/w200/" + item.poster_path} alt=""></img>
                                                 <h4> {item.title ? item.title : item.name}</h4>
                                                 <div className="score">
-                                                    <div><span className='pop'>{Math.round(item.popularity * 10) / 10} <i className="fas fa-users" ></i></span></div>
+                                                    <div><span className='pop'>{Math.round(item.popularity * 10) / 10} <i className="fa fa-users" ></i></span></div>
 
                                                     <div><span className='vote'>{Math.round(item.vote_average * 10) / 10} <i className="fa fa-star" ></i></span></div>
                                                 </div>
@@ -180,7 +180,7 @@ class Film extends React.Component {
                                                     <img className="profile-image" src={"https://image.tmdb.org/t/p/w200/" + item.poster_path} alt=""></img>
                                                     <h4> {item.title ? item.title : item.name}</h4>
                                                     <div className="score">
-                                                        <div><span className='pop'>{Math.round(item.popularity * 10) / 10} <i className="fas fa-users" ></i></span></div>
+                                                        <div><span className='pop'>{Math.round(item.popularity * 10) / 10} <i className="fa fa-users" ></i></span></div>
 
                                                         <div><span className='vote'>{Math.round(item.vote_average * 10) / 10} <i className="fa fa-star" ></i></span></div>
                                                     </div>
