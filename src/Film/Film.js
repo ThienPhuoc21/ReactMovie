@@ -1,18 +1,22 @@
 import React from "react";
 import './Film.scss'
+import logo from '../logo.svg'
 import axios from 'axios'
+import withRouter from "./WithRouter";
 import Videos from "./Videos";
 import {
     Link
 } from 'react-router-dom';
-export default class Film extends React.Component {
+
+class Film extends React.Component {
     state = {
         film: "",
-        id: this.props.match.params.id,
-        mode: this.props.match.params.movieortv,
+        id: this.props.params.id,
+        mode: this.props.params.movieortv,
+        loading: true
     }
     async componentDidMount() {
-
+        this.setState({ loading: true })
         let listcast = await axios.get('https://api.themoviedb.org/3/' + this.state.mode + '/' + this.state.id + '/credits?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US')
         let recommen1 = await axios.get('https://api.themoviedb.org/3/' + this.state.mode + '/' + this.state.id + '/recommendations?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&page=1')
         let recommen2 = await axios.get('https://api.themoviedb.org/3/' + this.state.mode + '/' + this.state.id + '/recommendations?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&page=2')
@@ -25,6 +29,7 @@ export default class Film extends React.Component {
             recommendations: recommen1.data.results.concat(recommen2.data.results),
             similar: sim1.data.results.concat(sim2.data.results),
         })
+        this.setState({ loading: false })
     }
 
     fix_date = (date) => {
@@ -60,8 +65,13 @@ export default class Film extends React.Component {
         let listRec = this.state.recommendations
         let listSim = this.state.similar
         let a = this.show_country(this.state.film.production_countries)
-        return (
-            <div className="film-container">
+        let loading = this.state.loading
+        return (loading ?
+            <div className="film-container-loading">
+                <h1 color="white">Loading...</h1>
+                <img src={logo} className="load-logo" alt="logo" />
+            </div>
+            : <div className="film-container">
                 <img className="film-backdrop" src={"https://image.tmdb.org/t/p/original/" + this.state.film.backdrop_path} alt="">
                 </img>
                 <div className="film-content">
@@ -183,6 +193,10 @@ export default class Film extends React.Component {
                         </div> : <></>
                 }
 
-            </div >)
+            </div >
+
+        )
     }
 }
+
+export default withRouter(Film);

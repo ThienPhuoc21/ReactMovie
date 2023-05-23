@@ -10,10 +10,10 @@ class Navbar extends React.Component {
             <div className='nav-container'>
                 {/* <img src='https://api.logo.com/api/v2/images?format=webp&logo=logo_47a5b2e7-ccf9-4687-8dc1-87e590f31052&width=1000&background=transparent&fit=contain&u=1670916660' alt="logo" className="logo" /> */}
                 <div className='link'>
-                    <NavLink to="/" exact activeClassName="active" className="nav-child">Home</NavLink>
-                    <NavLink to="/movie" activeClassName="active" className="nav-child">Movie</NavLink>
-                    <NavLink to="/tv" activeClassName="active" className="nav-child">TV</NavLink>
-                    <NavLink to="/film" activeClassName="active" className="nav-child">Film</NavLink>
+                    <NavLink to="ReactMovie/" exact="true" activeclassname="active" className="nav-child">Home</NavLink>
+                    <NavLink to="ReactMovie/movie" activeclassname="active" className="nav-child">Movie</NavLink>
+                    <NavLink to="ReactMovie/tv" activeclassname="active" className="nav-child">TV</NavLink>
+                    <NavLink to="/film" activeclassname="active" className="nav-child">Film</NavLink>
                 </div>
             </div>
         )

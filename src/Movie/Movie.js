@@ -1,4 +1,5 @@
 import React from "react";
+import logo from '../logo.svg'
 import {
     Link
 } from 'react-router-dom';
@@ -16,8 +17,10 @@ class Movie extends React.Component {
         query: "",
         year: "",
         mode: 1,
+        loading: true,
     }
     async componentDidMount() {
+        this.setState({ loading: true })
         let res1 = await axios.get('https://api.themoviedb.org/3/discover/movie?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&include_video=true&page=1')
         let res2 = await axios.get('https://api.themoviedb.org/3/discover/movie?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&include_video=true&page=2')
         let res3 = await axios.get('https://api.themoviedb.org/3/discover/movie?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&include_video=true&page=3')
@@ -28,6 +31,10 @@ class Movie extends React.Component {
             listMovies: arr,
             currentPage: 1,
         })
+        this.setState({ loading: false })
+    }
+    setLoading = (a) => {
+        this.setState({ loading: a })
     }
     setMode = (a) => {
         this.setState({
@@ -73,6 +80,7 @@ class Movie extends React.Component {
 
 
     async handleFilter(listFilter) {
+        this.setState({ loading: true })
         let genres = listFilter.toString();
         let res1 = await axios.get('https://api.themoviedb.org/3/discover/movie?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&page=1&with_genres=' + genres)
         let res2 = await axios.get('https://api.themoviedb.org/3/discover/movie?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&page=2&with_genres=' + genres)
@@ -84,6 +92,7 @@ class Movie extends React.Component {
             currentPage: 1,
             year: "",
         })
+        this.setState({ loading: false })
     }
     handleYear(event) {
         this.setState({
@@ -91,6 +100,7 @@ class Movie extends React.Component {
         })
     }
     async handleSearchYear(event) {
+        this.setState({ loading: true })
         let year = this.state.year.toString()
         let res1 = await axios.get('https://api.themoviedb.org/3/discover/movie?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&page=1&primary_release_year=' + year)
         let res2 = await axios.get('https://api.themoviedb.org/3/discover/movie?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&page=2&primary_release_year=' + year)
@@ -102,6 +112,7 @@ class Movie extends React.Component {
             currentPage: 1,
             listFilter: [],
         })
+        this.setState({ loading: false })
     }
     fix_date = (date) => {
         if (date) {
@@ -133,12 +144,15 @@ class Movie extends React.Component {
         let listfilter = this.state.listFilter
         let list = this.state.listMovies
         list = list.filter(item => item.poster_path !== null)
-        return (
+        return (this.state.loading ? <div className="film-container-loading">
+            <h1 color="white">Loading...</h1>
+            <img src={logo} className="load-logo" alt="logo" />
+        </div> :
             <div className='movie-container'>
                 <div className="row no-gutters">
                     <div className="col l-3 m-12 c-12">
                         <div className="sidebar-container">
-                            <Search setMode={this.setMode} query={this.state.query} setQuery={this.setQuery} setFilter={this.setFilter} setMovieandPage={this.setMovieandPage}></Search>
+                            <Search setLoading={this.setLoading} setMode={this.setMode} query={this.state.query} setQuery={this.setQuery} setFilter={this.setFilter} setMovieandPage={this.setMovieandPage}></Search>
                             <div className="genre">
                                 <h3 className='genre-title'>Genres</h3>
                                 <div className="genre-listgenres">
@@ -208,7 +222,7 @@ class Movie extends React.Component {
                                     }
                                 </div>
                             </div>
-                            <Pagebutton setData={this.setMovieandPage} currentPage={this.state.currentPage} query={this.state.query} listFilter={this.state.listFilter} year={this.state.year} mode={this.state.mode}>
+                            <Pagebutton setLoading={this.setLoading} setData={this.setMovieandPage} currentPage={this.state.currentPage} query={this.state.query} listFilter={this.state.listFilter} year={this.state.year} mode={this.state.mode}>
                             </Pagebutton>
 
                         </div>

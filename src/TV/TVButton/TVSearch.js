@@ -7,6 +7,7 @@ class TVSearch extends React.Component {
         this.props.setQuery(event.target.value)
     }
     async handleSearch() {
+        this.props.setLoading(true)
         let res1 = await axios.get('https://api.themoviedb.org/3/search/tv?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&query=' + (this.props.query) + '&page=1')
         let res2 = await axios.get('https://api.themoviedb.org/3/search/tv?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&query=' + (this.props.query) + '&page=2')
         let res3 = await axios.get('https://api.themoviedb.org/3/search/tv?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&query=' + (this.props.query) + '&page=3')
@@ -15,6 +16,7 @@ class TVSearch extends React.Component {
         let a = []
         this.props.setFilter(a)
         this.props.setMode(2)
+        this.props.setLoading(false)
     }
     render() {
         return (<div className="search">

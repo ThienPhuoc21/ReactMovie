@@ -16,19 +16,19 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" exact={true} element={<Home />}>
+          <Route path="ReactMovie/" exact="true" element={<Home />} active>
           </Route>
-          <Route path="/movie" element={<Movie />}>
+          <Route path="ReactMovie/movie" element={<Movie />}>
 
           </Route>
-          <Route path="/tv" element={<TV />}>
+          <Route path="ReactMovie/tv" element={<TV />}>
 
           </Route>
-          <Route path="/film/:movieortv/:id" render={(props) => <Film {...props} />}>
+          <Route path="/film/:movieortv/:id" element={<Film />} >
           </Route>
         </Routes>
       </div>
-    </Router>
+    </Router >
   );
 }
 

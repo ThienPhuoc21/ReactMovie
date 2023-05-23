@@ -3,7 +3,6 @@
     margin-top: 5px;
     height: 80vh;
 
-
     .film-backdrop {
         top: 0;
         width: 100%;
@@ -342,4 +341,37 @@
         }
     }
 
+}
+
+.film-container-loading {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    justify-content: center;
+
+    .load-logo {
+        height: 20vmin;
+        pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .load-logo {
+            animation: App-logo-spin infinite 3s linear;
+        }
+    }
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+
+    h1 {
+        color: white;
+    }
 }

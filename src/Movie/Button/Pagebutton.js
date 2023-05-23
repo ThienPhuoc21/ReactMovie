@@ -3,6 +3,7 @@ import './Pagebutton.scss';
 import axios from "axios";
 class Pagebutton extends React.Component {
     async handleNext(currentPage, query, filter, year) {
+        this.props.setLoading(true)
         if (this.props.mode === 1) {
             let res1 = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&page=' + ((currentPage) * 3 + 1))
             let res2 = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&page=' + ((currentPage) * 3 + 2))
@@ -37,8 +38,10 @@ class Pagebutton extends React.Component {
             this.props.setData(arr, currentPage + 1)
             console.log(4)
         }
+        this.props.setLoading(false)
     }
     async handlePrev(currentPage, query, filter, year) {
+        this.props.setLoading(true)
         if (this.props.mode === 1) {
             let res1 = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&page=' + ((currentPage - 2) * 3 + 1))
             let res2 = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=b28a95fd7c9e0ad571b7ff6e54683cb7&language=en-US&page=' + ((currentPage - 2) * 3 + 2))
@@ -73,6 +76,7 @@ class Pagebutton extends React.Component {
             this.props.setData(arr, currentPage - 1)
             console.log(4)
         }
+        this.props.setLoading(false)
     }
     render() {
         return (
