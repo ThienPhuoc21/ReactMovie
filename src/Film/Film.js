@@ -144,7 +144,7 @@ class Film extends React.Component {
                                                 window.scrollTo(0, 0);
                                                 setTimeout(() => {
                                                     window.location.reload(true);
-                                                }, "2000");
+                                                }, "1000");
                                             }}>
                                                 <img className="profile-image" src={"https://image.tmdb.org/t/p/w200/" + item.poster_path} alt=""></img>
                                                 <h4> {item.title ? item.title : item.name}</h4>
