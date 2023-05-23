@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/ReactMovie/" exact="true" element={<Home />} active>
           </Route>
-          <Route path="/ReactMovie/movie" element={<Movie />}>
+          <Route path="/ReactMovie/movie" exact="true" element={<Movie />}>
 
           </Route>
           <Route path="/ReactMovie/tv" element={<TV />}>
