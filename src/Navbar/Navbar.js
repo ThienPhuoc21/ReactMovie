@@ -13,7 +13,7 @@ class Navbar extends React.Component {
                     <NavLink to="ReactMovie/" exact="true" activeclassname="active" className="nav-child">Home</NavLink>
                     <NavLink to="ReactMovie/movie" activeclassname="active" className="nav-child">Movie</NavLink>
                     <NavLink to="ReactMovie/tv" activeclassname="active" className="nav-child">TV</NavLink>
-                    <NavLink to="film/" activeclassname="active" className="nav-child">Film</NavLink>
+                    <NavLink to="ReactMovie/film" activeclassname="active" className="nav-child">Film</NavLink>
                 </div>
             </div>
         )
