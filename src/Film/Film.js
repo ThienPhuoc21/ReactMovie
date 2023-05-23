@@ -141,8 +141,8 @@ class Film extends React.Component {
                                     return (
                                         <div className="wrap-item" key={index}>
                                             <Link to={`/ReactMovie/film/${this.state.mode}/${item.id}`} className="link" refresh="true" onClick={() => {
+                                                window.scrollTo(0, 0);
                                                 setTimeout(() => {
-                                                    window.scrollTo(0, 0);
                                                     window.location.reload(true);
                                                 }, "2000");
                                             }}>
@@ -172,9 +172,9 @@ class Film extends React.Component {
                                         return (
                                             <div className="wrap-item" key={index}>
                                                 <Link to={`/ReactMovie/film/${this.state.mode}/${item.id}`} className="link" refresh="true" onClick={() => {
+                                                    window.scrollTo(0, 0);
                                                     setTimeout(() => {
                                                         window.location.reload(false);
-                                                        window.scrollTo(0, 0);
                                                     }, "1000");
                                                 }}>
                                                     <img className="profile-image" src={"https://image.tmdb.org/t/p/w200/" + item.poster_path} alt=""></img>
