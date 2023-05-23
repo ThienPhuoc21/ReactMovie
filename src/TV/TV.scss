@@ -1,0 +1,351 @@
+.tv-container {
+
+    top: 0;
+    margin: 0;
+    padding: 0 0;
+    background-color: #282c34;
+    height: auto;
+    width: 100%;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%), url('../background.jpg');
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-attachment: fixed;
+
+    .sidebar-container {
+        margin: 5px;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, rgb(3, 58, 55, 0.7) 0%, rgb(1, 87, 11, 0.7)100%);
+        color: white;
+        padding: 0 5px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        h3 {
+            padding: 5px;
+            border-bottom: 2px orange solid;
+        }
+
+
+
+        .genre {
+            .genre-listgenres {
+                display: flex;
+                flex-wrap: wrap;
+
+                .genre-items {
+                    color: orange;
+                    border: solid orange 1px;
+                    padding: 5px 10px;
+                    margin: 5px;
+                    border-radius: 10px;
+                    cursor: default;
+                }
+
+
+                .active {
+                    border: solid orange 1px;
+                    background-color: orange;
+                    color: black !important;
+                }
+            }
+        }
+
+        .find {
+            float: left;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 10px;
+            background-color: rgb(0, 115, 185);
+            border: 0;
+            color: rbga(0, 0, 0, 0);
+
+        }
+
+        .find:hover {
+            cursor: pointer;
+            scale: 1.1;
+        }
+
+        .year {
+            width: 100%;
+            box-sizing: border-box;
+
+            .year-wrap {
+                display: flex;
+                justify-content: center;
+
+                input[type='text'] {
+
+                    margin: 20px 10px;
+                    height: 25px;
+                    padding: 5px;
+                    width: 70%;
+
+                    outline: none;
+                    border: 1px gray solid;
+                    border-radius: 5px;
+                    background-color: #333333;
+                    color: white;
+                }
+
+                input:focus {
+                    border: 1px orange solid;
+                }
+
+                .year-button {
+                    margin: 20px 0;
+                    height: 25px;
+                    // color: white;
+                    // padding: 0 10px;
+                    // border-radius: 0px;
+                    // border-top-right-radius: 5px;
+                    // border-bottom-right-radius: 5px;
+                    // outline: none;
+                    // border: 0;
+                    // background-color: gray;
+
+                }
+
+                .year-button:hover {
+                    transform: none;
+                }
+            }
+
+        }
+    }
+
+
+
+    .listTV-container {
+        margin: 5px;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, rgb(3, 58, 55, 0.7) 0%, rgb(1, 87, 11, 0.7)100%);
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+
+
+        .header {
+            margin: 0 5px;
+
+            h3 {
+                color: white;
+                border-bottom: orange solid 2px;
+                padding: 5px;
+            }
+        }
+
+
+
+
+        .listTV {
+            margin: 5px;
+            height: 106vh;
+            overflow-y: auto;
+
+
+
+            .wrap-item {
+                display: flex;
+                position: relative;
+                margin: 12px;
+                height: auto;
+
+                img {
+
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+
+                    border-radius: 10px;
+
+                }
+
+
+                .item-content {
+                    border-radius: 10px;
+                    position: absolute;
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    text-align: center;
+                }
+
+                .no-backdrop {
+                    background-color: aquamarine;
+                    border-radius: 10px;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+
+                }
+
+                .notification {
+                    position: absolute;
+                    z-index: 2;
+                    display: flex;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+
+
+                    .top {
+
+                        padding: 2%;
+                        background-color: orangered;
+                        border-radius: 10px;
+                    }
+
+                    .adult {
+
+                        background-color: RED;
+                        border-radius: 10px;
+                    }
+                }
+
+            }
+
+            .wrap-item:hover {
+                .item-content {
+                    display: flex;
+                    padding: 3%;
+                    flex-direction: column;
+                    justify-content: center;
+                    scale: 1.1;
+                    background-image: linear-gradient(to top, rgba(135, 45, 225, 0.7), rgba(0, 205, 0, 0.7));
+                    margin-bottom: 5%;
+                    color: white;
+                    font-size: small;
+
+                    .title {
+
+                        font-weight: bold;
+                    }
+
+
+                    .score {
+                        display: flex;
+                        height: auto;
+                        justify-content: center;
+
+                        div {
+                            margin: 5%;
+                            margin-bottom: 0;
+
+                            span {
+                                width: auto;
+                                height: 100%;
+                            }
+
+                            .vote {
+                                color: yellow;
+                            }
+
+                            .pop {
+                                color: aqua;
+                            }
+                        }
+                    }
+
+                    .watch {
+                        margin: 5% auto;
+                        color: none;
+                        background-color: orange;
+                        border: none;
+                        border-radius: 10px;
+                        display: block;
+                        width: auto;
+                        padding: 4%;
+                    }
+
+                    .watch:hover {
+                        opacity: 0.6;
+                        cursor: pointer;
+                    }
+                }
+
+
+
+                img {
+
+                    scale: 1.1;
+                }
+
+                .notification {
+                    display: none;
+                }
+
+            }
+        }
+
+        .listTV::-webkit-scrollbar {
+            width: 6px;
+            background-color: rgba(0, 0, 0, 0.307);
+
+        }
+
+        .listTV::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            background: orange
+        }
+
+
+    }
+}
+
+@media (min-width: 1450px) {
+
+
+    .sidebar-container {
+        height: calc(93vh) !important;
+    }
+
+
+
+    .item-content {
+        min-height: 237px;
+    }
+
+    .listTV-container {
+        height: calc(93vh) !important;
+
+        img {
+            min-height: 237px;
+        }
+
+        button {
+            font-size: medium !important;
+        }
+    }
+
+
+}
+
+@media (max-width: 600px) {
+    * {
+        font-size: x-small;
+    }
+
+    .genre {
+        .listgenres {
+            font-size: x-small;
+        }
+
+
+    }
+
+    .find {
+        font-size: x-small;
+    }
+
+    .tv-container {
+        button {
+            font-size: x-small !important;
+        }
+    }
+}

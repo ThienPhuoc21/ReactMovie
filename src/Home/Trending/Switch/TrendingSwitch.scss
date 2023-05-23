@@ -1,0 +1,42 @@
+.trend-switch-container {
+
+    .trend-switch-wrap {
+        display: flex;
+        width: fit-content;
+        position: relative;
+        font-size: medium;
+        border: 1px orange solid;
+        margin: auto;
+        border-radius: 20px;
+
+        .Movie {
+            border-radius: 20px;
+            padding: 5px 10px;
+            color: orange;
+        }
+
+        .TV {
+            border-radius: 20px;
+            padding: 5px 10px;
+            color: orange;
+        }
+
+
+        div:hover {
+            cursor: pointer;
+        }
+
+        .Movie-active {
+            background-color: rgba(135, 45, 225, 0.7);
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+
+        .TV-active {
+            background-color: rgba(0, 205, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+    }
+}

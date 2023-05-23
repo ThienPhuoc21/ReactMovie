@@ -1,0 +1,345 @@
+.film-container {
+    position: relative;
+    margin-top: 5px;
+    height: 80vh;
+
+
+    .film-backdrop {
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        object-fit: cover;
+    }
+
+    .film-content {
+        padding: 20px;
+        position: absolute;
+        top: 0;
+        background-image: linear-gradient(to right, rgb(0, 0, 0, 0.3)0%, rgba(0, 0, 0, 0.6)40%, rgba(0, 0, 0, 0.7)50%, rgba(0, 0, 0, 0.6)60%, rgba(0, 0, 0, 0.3)100%);
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+
+        .wrap-content {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            margin: auto;
+            overflow: auto;
+            justify-content: center;
+
+            .film-poster {
+                border-radius: 20px;
+                height: 100%;
+                width: auto;
+
+            }
+
+            .film-detail {
+                display: flex;
+                flex-direction: column;
+                color: #ccc;
+                text-align: start;
+                margin: 0 20px;
+
+                h4,
+                h1 {
+                    color: white;
+                }
+
+                .film-title {
+                    margin: 0;
+                }
+
+                .film-date-language-runtime {
+
+                    div {
+                        width: fit-content;
+                        border-radius: 30px;
+                        padding: 5px 10px;
+                        margin: 10px 0;
+
+                        color: orange;
+                        border: solid 1px orange;
+                    }
+
+                    .status {
+                        color: rgb(45, 255, 0);
+                        border: solid 1px rgb(45, 255, 0);
+                    }
+                }
+
+                .wrap-genre {
+                    display: flex;
+                    color: black;
+                    margin: 10px 0;
+
+                    div {
+                        border-radius: 30px;
+                        padding: 5px 10px;
+
+                        margin-right: 10px;
+
+                    }
+
+                    .Action {
+                        border: red solid 1px;
+                        background-color: red;
+                    }
+
+                    .Adventure {
+                        border: orange solid 1px;
+                        background-color: orange;
+                        color: black
+                    }
+
+                    .Comedy {
+                        border: yellow solid 1px;
+                        background-color: yellow;
+                        color: black;
+                    }
+
+                    .Crime,
+                    .Kids {
+                        border: greenyellow solid 1px;
+                        background-color: greenyellow;
+                        color: black;
+                    }
+
+                    .Documentary {
+                        border: green solid 1px;
+                        background-color: green;
+                    }
+
+                    .Drama,
+                    .Talk {
+                        border: rgb(0, 255, 155) solid 1px;
+                        background-color: rgb(0, 255, 155);
+                        color: black;
+                    }
+
+                    .Family,
+                    .Reality {
+                        border: cyan solid 1px;
+                        background-color: cyan;
+                        color: black;
+                    }
+
+                    .Fantasy {
+                        border: rgb(0, 100, 255) solid 1px;
+                        background-color: rgb(0, 100, 255)
+                    }
+
+                    .History {
+                        border: blue solid 1px;
+                        background-color: blue
+                    }
+
+                    .Music,
+                    .Horror {
+                        border: rgb(100, 0, 255) solid 1px;
+                        background-color: rgb(100, 0, 255)
+                    }
+
+                    .Mystery,
+                    .Animation {
+                        border: purple solid 1px;
+                        background-color: purple
+                    }
+
+                    .Romance,
+                    .Soap {
+                        border: rgb(255, 0, 255) solid 1px;
+                        background-color: rgb(255, 0, 255);
+                        color: black;
+                    }
+
+                    .Science,
+                    .Sci-Fi {
+                        border: brown solid 1px;
+                        background-color: brown
+                    }
+
+                    .TV {
+                        border: gray solid 1px;
+                        background-color: gray;
+                        color: black;
+                    }
+
+                    .Thriller {
+                        border: black solid 1px;
+                        background-color: black;
+                        color: white;
+                    }
+
+                    .War,
+                    .News {
+                        border: #EDCA91 solid 1px;
+                        background-color: #EDCA91;
+                        color: black;
+                    }
+
+                    .Western {
+                        border: white solid 1px;
+                        background-color: white;
+                        color: black;
+                    }
+                }
+
+                .film-overview {
+                    width: 100%;
+                }
+
+                .film-score {
+                    .vote {
+                        color: gold;
+                    }
+
+                    .pop {
+                        color: cyan;
+                    }
+                }
+
+                .film-button {
+                    button {
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+
+        .wrap-content::-webkit-scrollbar {
+            margin-top: 10px;
+            width: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+
+        }
+
+        .wrap-content::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: orange
+        }
+
+    }
+
+    .film-cast,
+    .film-rec,
+    .film-sim {
+        position: relative;
+        height: auto;
+        border-bottom: white 1px solid;
+        padding: 20px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: linear-gradient(to left, rgba(0, 25, 65, 0.7) 0%, rgba(0, 25, 65, 0.9) 50%, rgba(0, 25, 65, 0.7) 100%), url('../background.jpg');
+        background-repeat: no-repeat;
+        background-position: cover;
+        background-attachment: fixed;
+
+
+        .film-cast-title,
+        .film-rec-title,
+        .film-sim-title {
+            width: fit-content;
+            margin: 10px;
+            border-bottom: 1px orange solid;
+        }
+
+
+        .wrap {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+
+            .wrap-item {
+                position: relative;
+                margin-right: 10px;
+                border-radius: 10px;
+                border: 1px white solid;
+                margin-bottom: 10px;
+                padding-bottom: 5px;
+                width: 152px;
+
+                .profile-image {
+                    width: 150px;
+                    height: 200px;
+                    border-radius: 10px;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+
+                }
+
+                .score {
+                    display: flex;
+                    justify-content: space-around;
+                    bottom: 0;
+                    font-size: small;
+
+                    .vote {
+                        color: gold;
+                    }
+
+                    .pop {
+                        color: cyan;
+                    }
+                }
+
+                .link {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+
+        .wrap::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+
+        }
+
+        .wrap::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            width: 10px;
+            background: orange
+        }
+    }
+
+
+}
+
+
+
+
+
+
+@media (max-width: 1024px) {
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-size: medium;
+    }
+
+    .film-container {
+        height: 50vh;
+
+        .wrap-content {
+            width: 100% !important;
+
+            .film-poster {
+                display: none;
+            }
+        }
+    }
+
+}

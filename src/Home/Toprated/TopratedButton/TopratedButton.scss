@@ -1,0 +1,33 @@
+.toprated-button-container {
+    position: relative;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        margin: 2px;
+        background-color: orange;
+        border: none;
+        border-radius: 10px;
+        width: auto;
+        padding: 5px;
+        font-size: smaller;
+    }
+
+    button:hover {
+        scale: 1.1;
+        cursor: pointer;
+        opacity: 1.1;
+    }
+
+    .page {
+        font-size: small;
+        margin: 2px;
+        border: 2px orange solid;
+        color: orange;
+        border-radius: 10px;
+        width: auto;
+        padding: 5px 10px;
+    }
+}

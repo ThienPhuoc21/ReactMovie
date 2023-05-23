@@ -1,0 +1,45 @@
+.nav-container {
+    width: 100%;
+    background-color: #333;
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 99;
+
+    .link {
+        height: 42px;
+
+        a {
+            float: center;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 15px;
+            padding-top: 0;
+            text-decoration: none;
+            font-size: 17px;
+            height: auto;
+        }
+
+        a:hover {
+            color: rgb(183, 37, 193);
+        }
+
+        .active {
+            background-color: rgb(0, 0, 0);
+            border-bottom: blueviolet solid 3px;
+            color: blueviolet;
+        }
+    }
+
+
+    .logo {
+        position: fixed;
+        float: left;
+        height: 60px;
+        width: auto;
+        margin: 10px;
+    }
+
+}

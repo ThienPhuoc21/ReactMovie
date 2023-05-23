@@ -1,0 +1,42 @@
+.toprated-switch-wrap {
+    display: flex;
+    float: left;
+    width: fit-content;
+    font-size: small;
+    border: 1px orange solid;
+    border-radius: 20px;
+    align-items: center;
+    height: fit-content;
+    margin: auto;
+    margin-left: 0;
+
+    .movie {
+        border-radius: 20px;
+        padding: 5px;
+        color: orange
+    }
+
+    .tv {
+        border-radius: 20px;
+        padding: 5px;
+        color: orange
+    }
+
+
+    div:hover {
+        cursor: pointer;
+    }
+
+    .movie-active {
+        background-color: rgba(135, 45, 225, 0.7);
+        border-radius: 20px;
+        padding: 5px;
+    }
+
+    .tv-active {
+        background-color: rgba(0, 205, 0, 0.7);
+        padding: 5px;
+        border-radius: 20px;
+    }
+
+}

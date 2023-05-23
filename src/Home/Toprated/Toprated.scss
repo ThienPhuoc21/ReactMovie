@@ -1,0 +1,84 @@
+.toprated-container {
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 5px;
+    background-image: linear-gradient(to right, rgb(55, 53, 111, 0.7)0%, rgb(72, 42, 95, 0.7)100%);
+    font-size: small !important;
+    color: white;
+
+    h2 {
+        text-align: center;
+    }
+
+    .action {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 5px;
+        margin: 0 5px;
+    }
+
+    .wrap {
+        display: relative;
+        width: 100%;
+        overflow-y: auto;
+        height: 118vh;
+
+        .item {
+
+            display: flex;
+            height: auto;
+            width: 100%;
+            border-top: 2px solid orange;
+            align-items: center;
+            justify-content: center;
+
+            .poster {
+                height: auto;
+                height: 70px;
+
+                img {
+                    border: none;
+                    width: auto;
+                    height: 70px;
+                }
+            }
+
+            .content {
+                flex-grow: 1;
+                padding: 3px;
+                text-align: center;
+
+                .title {
+                    font-weight: bold;
+                }
+
+                .genre {
+                    opacity: 0.7;
+                }
+            }
+
+            .rate {
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 3px;
+                width: auto;
+                font-size: small !important;
+                color: yellow;
+                height: 100%;
+            }
+        }
+    }
+
+    .wrap::-webkit-scrollbar {
+        width: 6px;
+        background-color: rgba(0, 0, 0, 0.307);
+
+    }
+
+    .wrap::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background: orange
+    }
+
+}

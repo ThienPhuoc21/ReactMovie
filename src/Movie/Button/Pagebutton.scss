@@ -1,0 +1,20 @@
+.page-button-container {
+    margin: 5px;
+    border-top: orange solid 2px;
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: orange;
+    border: 0;
+    color: rbga(0, 0, 0, 0);
+    font-size: medium;
+}
+
+button:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
