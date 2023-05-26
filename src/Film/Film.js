@@ -67,7 +67,7 @@ class Film extends React.Component {
         let a = this.show_country(this.state.film.production_countries)
         let loading = this.state.loading
         return (loading ?
-            <div className="film-container-loading">
+            <div className="film-container-loading" >
                 <h1 color="white">Loading...</h1>
                 <img src={logo} className="load-logo" alt="logo" />
             </div>
@@ -141,8 +141,8 @@ class Film extends React.Component {
                                     return (
                                         <div className="wrap-item" key={index}>
                                             <Link to={`/ReactMovie/film/${this.state.mode}/${item.id}`} className="link" refresh="true" onClick={() => {
-                                                window.scrollTo(0, 0);
                                                 setTimeout(() => {
+                                                    window.scrollTo(0, 0);
                                                     window.location.reload(true);
                                                 }, "1000");
                                             }}>
@@ -172,9 +172,9 @@ class Film extends React.Component {
                                         return (
                                             <div className="wrap-item" key={index}>
                                                 <Link to={`/ReactMovie/film/${this.state.mode}/${item.id}`} className="link" refresh="true" onClick={() => {
-                                                    window.scrollTo(0, 0);
                                                     setTimeout(() => {
-                                                        window.location.reload(false);
+                                                        window.scrollTo(0, 0);
+                                                        window.location.reload(true);
                                                     }, "1000");
                                                 }}>
                                                     <img className="profile-image" src={"https://image.tmdb.org/t/p/w200/" + item.poster_path} alt=""></img>

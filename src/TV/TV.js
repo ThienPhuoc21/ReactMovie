@@ -210,7 +210,11 @@ class TV extends React.Component {
                                                                     <br></br>
                                                                     <div><span className='vote'>{Math.round(item.vote_average * 10) / 10} <i className="fa fa-star" ></i></span></div>
                                                                 </div >
-                                                                <button className="watch"><Link to={`/ReactMovie/film/tv/${item.id}`} exact="true" className="link" >Watch</Link></button>
+                                                                <button className="watch"><Link to={`/ReactMovie/film/tv/${item.id}`} exact="true" className="link" onClick={() => {
+                                                                    setTimeout(() => {
+                                                                        window.scrollTo(0, 0);
+                                                                    }, "1000");
+                                                                }}>Watch</Link></button>
                                                             </div>
                                                                 <div className="notification">
                                                                     <div className="adult">{item.adult === true ? "18+" : ""}</div>

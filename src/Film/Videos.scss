@@ -50,6 +50,7 @@
                 display: flex;
 
                 .page {
+                    margin: auto;
                     width: fit-content;
                     height: fit-content;
                     padding: 5px 10px;
@@ -80,6 +81,7 @@
                 height: 200px;
                 margin: 10px auto;
             }
+
         }
     }
 }

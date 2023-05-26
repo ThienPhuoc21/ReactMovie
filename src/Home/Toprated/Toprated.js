@@ -80,18 +80,22 @@ export default class Toprated extends Component {
                                 list.map((item, index) => {
                                     return (
                                         <div className="col l-12" key={index}>
-                                            <Link to={`/ReactMovie/film/${this.state.Movie_TV ? "movie" : "tv"}/${item.id}`} className="link" >                                            <div className="item">
-                                                <div className="poster">
-                                                    {item.poster_path ? <><img src={'https://image.tmdb.org/t/p/w200' + item.poster_path} alt="poster"></img></> : <><div>No poster</div></>}
+                                            <Link to={`/ReactMovie/film/${this.state.Movie_TV ? "movie" : "tv"}/${item.id}`} className="link" onClick={() => {
+                                                setTimeout(() => {
+                                                    window.scrollTo(0, 0)
+                                                }, "1000");
+                                            }}>                                            <div className="item">
+                                                    <div className="poster">
+                                                        {item.poster_path ? <><img src={'https://image.tmdb.org/t/p/w200' + item.poster_path} alt="poster"></img></> : <><div>No poster</div></>}
+                                                    </div>
+                                                    <div className="content">
+                                                        <div className="title">{this.state.Movie_TV === 1 ? ((index + 1 + this.state.Page * 20 - 20) + ". " + item.title) : ((index + 1 + this.state.Page * 20 - 20) + ". " + item.name)}</div>
+                                                        <div className="genre">{this.show_genres(item.genre_ids)}</div>
+                                                    </div>
+                                                    <div className="rate">
+                                                        <span>{Math.round(item.vote_average * 10) / 10} <i className="fa fa-star" ></i></span>
+                                                    </div>
                                                 </div>
-                                                <div className="content">
-                                                    <div className="title">{this.state.Movie_TV === 1 ? ((index + 1 + this.state.Page * 20 - 20) + ". " + item.title) : ((index + 1 + this.state.Page * 20 - 20) + ". " + item.name)}</div>
-                                                    <div className="genre">{this.show_genres(item.genre_ids)}</div>
-                                                </div>
-                                                <div className="rate">
-                                                    <span>{Math.round(item.vote_average * 10) / 10} <i className="fa fa-star" ></i></span>
-                                                </div>
-                                            </div>
                                             </Link>
                                         </div>
                                     )
